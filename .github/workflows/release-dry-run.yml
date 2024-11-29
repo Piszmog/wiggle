@@ -37,7 +37,8 @@ jobs:
 
           # Darwin AMD64
           sudo apt install build-essential
-          sudo apt install clang llvm
+          sudo apt install clang llvm lld
+          sudo ln -s $(which clang) /usr/local/bin/oa64-clang
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
