@@ -36,8 +36,8 @@ builds:
   - id: wiggle_darwin_arm64
     env:
       - CGO_ENABLED=1
-      - CC=oa64-clang
-      - CXX=oa64-clang++
+      #- CC=oa64-clang
+      #- CXX=oa64-clang++
     goos:
       - darwin
     goarch:
@@ -45,8 +45,8 @@ builds:
   - id: wiggle_darwin_amd64
     env:
       - CGO_ENABLED=1
-      - CC=o64-clang
-      - CXX=o64-clang++
+      #- CC=o64-clang
+      #- CXX=o64-clang++
     goos:
       - darwin
     goarch:
