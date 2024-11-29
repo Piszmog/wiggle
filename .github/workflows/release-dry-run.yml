@@ -31,6 +31,9 @@ jobs:
 
           # GoHook
           sudo apt install xcb libxcb-xkb-dev x11-xkb-utils libx11-xcb-dev libxkbcommon-x11-dev libxkbcommon-dev
+
+          # Linux Arm64
+          sudo apt install gcc-aarch64-linux-gnu
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
