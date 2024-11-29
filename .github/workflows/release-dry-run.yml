@@ -34,6 +34,9 @@ jobs:
 
           # Linux Arm64
           sudo apt install gcc-aarch64-linux-gnu
+
+          # Darwin AMD64
+          sudo apt install clang
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
