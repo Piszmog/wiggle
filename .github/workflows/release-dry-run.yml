@@ -37,13 +37,15 @@ jobs:
 
           # Darwin AMD64
           sudo apt install clang llvm
-
-          # Install o64-clang
-          git clone https://github.com/tpoechtrager/osxcross.git
+      - name: Set up osxcross
+        run: |
+          mkdir -p /opt
+          cd /opt
+          git clone --depth 1 https://github.com/tpoechtrager/osxcross.git
           cd osxcross
           sudo ./tools/get_dependencies.sh
           UNATTENDED=yes OSX_VERSION_MIN=10.12 sudo ./build.sh
-          export PATH=$PATH:${{ github.workspace }}/osxcross/target/bin
+          export PATH=$PATH:${{ github.workspace }}/opt/osxcross/target/bin
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
